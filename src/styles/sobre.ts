@@ -1,10 +1,6 @@
 import styled from "styled-components";
 import Image from 'next/image';
 
-type PhoneProps = {
-  active: boolean;
-}
-
 const Sobre = styled.div`
   width: 100%;
   height: auto;
@@ -16,7 +12,7 @@ const Sobre = styled.div`
 
 const SobreContainer = styled.div`
   width: 660px;
-  height: 400px;
+  height: 500px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -34,6 +30,7 @@ const SobreDescription = styled.div`
     inset -5px -5px 15px rgba(255, 255, 255, 0.08), 
     inset 10px 10px 15px rgba(0, 0, 0, 0.25);  
   ;
+  height: 100%;
 `;
 
 const SobreText = styled.text`
@@ -52,8 +49,8 @@ const Titulo = styled.text`
 
 const FotoContainer = styled.div`
   position: relative;
-  width: 400px;
-  height: 400px;
+  min-width: 500px;
+  min-height: 500px;
   border-radius: 50%;
   background: linear-gradient(180deg, #393E46 20%, #00FFF5 150%);
   border: solid 0px #393E46;
@@ -63,16 +60,15 @@ const FotoContainer = styled.div`
 const FotoMask = styled.div`
   position: absolute;
   bottom: 0;
-  width: 100%;
-  height: 500px;
-  border-radius: 200px 200px 200px 200px;
+  left: 0;
+  height: 600px;
+  width: 500px;
+  border-radius: 250px;
   overflow: hidden;
 
 `;
 
 const Foto = styled(Image)`
-  width: 380px;
-  height: auto;
 `;
 
 export { 

@@ -1,5 +1,21 @@
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+
+  ::-webkit-scrollbar {
+    width: 14px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #00fff762;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-track-piece {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
 }
 
 @media (max-width: 1080px) {
@@ -15,9 +31,9 @@
 }
 
 body {
-  background: #393E46;
-  color: #EBECED;
-  padding: 0 60px;
+  background: #393e46;
+  color: #ebeced;
+  overflow: overlay;
 }
 
 button {

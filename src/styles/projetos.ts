@@ -12,9 +12,8 @@ const ProjetosContainer = styled.div`
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  margin-top: 120px;
-  overflow: hidden;
-  width: 80%;
+  margin-top: 160px;
+  width: 100%;
   > div {
     margin: 0 80px;
   }
@@ -26,21 +25,10 @@ const ProjetosContainerActive = styled.div`
   position: relative;
 `;
 
-const ProjectFrame = styled.div`
-  position: absolute;
-  top: -60px;
-  left: 50%;
-  transform: translate(-50%, 0);
-`;
 
-const ProjectName = styled.h2`
-
-`;
 
 export { 
   ProjetosContainer,
   ProjetosContainerActive,
-  ProjectFrame,
-  ProjectName,
   Projetos
 };
