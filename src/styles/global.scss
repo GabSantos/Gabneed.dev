@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+
+@media (max-width: 1080px) {
+  html {
+    font-size: 93.75%;
+  }
+}
+
+@media (max-width: 720px) {
+  html {
+    font-size: 87.5%;
+  }
+}
+
+body {
+  background: #393E46;
+  color: #EBECED;
+  padding: 0 60px;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
