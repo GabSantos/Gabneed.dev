@@ -17,6 +17,7 @@ const ProjetosContainer = styled.div`
   > div {
     margin: 0 80px;
   }
+  position: relative;
 `;
 
 const ProjetosContainerActive = styled.div`
@@ -25,10 +26,25 @@ const ProjetosContainerActive = styled.div`
   position: relative;
 `;
 
+const ButtonsFrame = styled.div`
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  background: #ff000042;
+`;
+
+const ProjetoButtons = styled.button`
+  
+`;
+
 
 
 export { 
   ProjetosContainer,
   ProjetosContainerActive,
-  Projetos
+  Projetos,
+  ButtonsFrame,
+  ProjetoButtons
 };

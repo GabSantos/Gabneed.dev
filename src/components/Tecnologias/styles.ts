@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Image from 'next/image';
 
-const Tecnologias = styled.div`
+const Container = styled.div`
   width: 100%;
   height: auto;
   display: flex;
@@ -37,7 +37,7 @@ const Tech = styled(Image)`
 `;
 
 export { 
-  Tecnologias,
+  Container,
   TecnologiasContainer,
   TecnologiasText,
   Tech

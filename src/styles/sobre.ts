@@ -22,14 +22,10 @@ const SobreContainer = styled.div`
 
 const SobreDescription = styled.div`
   background: rgba(0, 0, 0, 0.48);
-  border: 3px solid rgba(0, 0, 0, 0.24);
+  border: 3px solid rgba(0, 0, 0, 0.48);
   border-radius: 15px;
   padding: 24px;
   backdrop-filter: blur(5px);
-  box-shadow: 
-    inset -5px -5px 15px rgba(255, 255, 255, 0.08), 
-    inset 10px 10px 15px rgba(0, 0, 0, 0.25);  
-  ;
   height: 100%;
 `;
 
