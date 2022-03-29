@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Projetos = styled.div`
+const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -44,7 +44,7 @@ const ProjetoButtons = styled.button`
 export { 
   ProjetosContainer,
   ProjetosContainerActive,
-  Projetos,
+  Container,
   ButtonsFrame,
   ProjetoButtons
 };

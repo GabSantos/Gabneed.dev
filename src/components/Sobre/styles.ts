@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Image from 'next/image';
 
-const Sobre = styled.div`
+const Container = styled.div`
   width: 100%;
   height: auto;
   display: flex;
@@ -68,7 +68,7 @@ const Foto = styled(Image)`
 `;
 
 export { 
-  Sobre,
+  Container,
   SobreContainer,
   SobreDescription,
   SobreText,
