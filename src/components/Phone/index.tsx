@@ -15,9 +15,12 @@ export default function Phone({ active, src, ...rest }: PhoneProps) {
     <Frame active={active} {...rest}>
       <Border active={active}>
         <Screen  
+          loader={!src ? () => src : () => {}}
+          unoptimized
           src={!src ? foto : src} 
           width={active ? 153 : 107}
           height={active ? 320 : 222}
+          objectFit="cover"
         />
         <Speaker active={active}/>
       </Border>

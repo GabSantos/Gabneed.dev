@@ -18,6 +18,7 @@ export default function Notebook({ active, src, ...rest }: NotebookProps) {
           src={!src ? foto : src} 
           width={active ? 480 : 337}
           height={active ? 310 : 217}
+          objectFit="cover"
         />
       </Frame>
       <Keyboard active={active}>

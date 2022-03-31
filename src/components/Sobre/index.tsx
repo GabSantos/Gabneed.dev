@@ -5,6 +5,7 @@ import { Container, Foto, FotoContainer, FotoMask, SobreContainer, SobreDescript
 
 
 export default function Sobre() {
+  const src = "https://firebasestorage.googleapis.com/v0/b/gabneed-dev.appspot.com/o/about%2FPhoto.png?alt=media&token=fa3ac0d1-fbf7-4703-af02-424206326411";
   
   return (
     <Container>
@@ -21,7 +22,9 @@ export default function Sobre() {
         <FotoContainer>
           <FotoMask>
             <Foto
-              src={foto}
+              loader={() => src}
+              unoptimized
+              src={src}
               alt='minha foto'
               width={500}
               height={600}

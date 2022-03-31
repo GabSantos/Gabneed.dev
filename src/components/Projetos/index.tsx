@@ -1,65 +1,139 @@
-import { useEffect, useState } from 'react';
-import { collection, query, getDocs, where } from 'firebase/firestore'
+import { ComponentProps, ComponentPropsWithoutRef, useEffect, useState } from 'react';
+import { collection, query, getDocs, where, QueryDocumentSnapshot, DocumentData } from 'firebase/firestore'
 
+import { db } from '../../utils/firebase';
 import Notebook from "../Notebook";
 import Phone from "../Phone";
 import ProjectName from "../ProjectName";
 
 import { ButtonsFrame, Container, ProjetoButtons, ProjetosContainer, ProjetosContainerActive } from "./styles";
+import { GetServerSideProps, GetStaticProps } from 'next';
+import { ProjectsProps, ResponseProps } from '../../pages';
 
-import { db } from '../../utils/firebase';
+export default function Projetos({ projects }: ResponseProps){
+  const [currentPhone, setCurrentPhone] = useState(0);
+  const [currentNotebook, setCurrentNotebook] = useState(0);
 
-const queryPhone = async () => {
-  const phoneQuery = query(collection(db, 'projetos'), where('platfomr', "==", 'Phone'))
-  
-  try {
-    const querySnapshot = await getDocs(phoneQuery);
-    querySnapshot.forEach((doc) => {
-      // doc.data() is never undefined for query doc snapshots
-      console.log(doc.id, " => ", doc.data());
-    });
-  } catch {
-    console.log('Erro ao buscar projetos');
+  const handleNextPhone = () => {
+    if(currentPhone + 1 > projects.phoneProjects.length - 1){
+      setCurrentPhone(0);
+    } else {
+      setCurrentPhone(currentPhone + 1);
+    }
   }
-}
-
-export default function Projetos() {
-  const [projetos, setProjetos] = useState([]);
+  const handlePreviousPhone = () => {
+    if(currentPhone - 1 < 0){
+      setCurrentPhone(projects.phoneProjects.length - 1);
+    } else {
+      setCurrentPhone(currentPhone - 1);
+    }
+  }
+  const handleNextNotebook = () => {
+    if(currentNotebook + 1 > projects.notebookProjects.length - 1){
+      setCurrentNotebook(0);
+    } else {
+      setCurrentNotebook(currentNotebook + 1);
+    }
+  }
+  const handlePreviousNotebook = () => {
+    if(currentNotebook - 1 < 0){
+      setCurrentNotebook(projects.notebookProjects.length - 1);
+    } else {
+      setCurrentNotebook(currentNotebook - 1);
+    }
+  }
+  const handleRedirect = (url: string) => {
+    const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
+    if(newWindow){
+      newWindow.opener = null;
+    }
+  }
 
   useEffect(() => {
-    try {
-      queryPhone();
-    } catch {
-      console.log('Erro ao buscar projetos');
-    }
-  }, [])
+    const phoneCarousel = setTimeout(() => {
+      handleNextPhone();
+    }, 10000);
+
+    return () => {
+      clearTimeout(phoneCarousel);
+    };
+  }, [currentPhone]);
+
+  useEffect(() => {
+    const notebookCarousel = setTimeout(() => {
+      handleNextNotebook();
+    }, 10000);
+
+    return () => {
+      clearTimeout(notebookCarousel);
+    };
+  }, [currentNotebook]);
 
   return (
     <Container>
-        <ProjetosContainer>
-          <Phone active={false} />
-          <Phone active={false} />
-          <ProjetosContainerActive>
-            <ProjectName name={'GoPizza'}/>
-            <Phone active={true} />
-          </ProjetosContainerActive>
-          <Phone active={false} />
-          <Phone active={false} />
-          <ButtonsFrame>
-            <ProjetoButtons >
-
-            </ProjetoButtons>
-          </ButtonsFrame>
-        </ProjetosContainer> 
-
-        <ProjetosContainer>
-          <Notebook active={false} />
-          <ProjetosContainerActive>
-            <ProjectName name={'GoPizza'} />
-            <Notebook active={true} />
-          </ProjetosContainerActive>
-          <Notebook active={false} />
-        </ProjetosContainer>
-      </Container>
+      {
+        projects.phoneProjects.length !== 0 ? (
+          <ProjetosContainer>
+            <Phone active={false} />
+            <Phone active={false} />
+            <ProjetosContainerActive>
+              <ProjectName name={projects.phoneProjects[currentPhone].name}/>
+              <Phone src={projects.phoneProjects[currentPhone].image_url} active={true} />
+            </ProjetosContainerActive>
+            <Phone active={false} />
+            <Phone active={false} />
+            <ButtonsFrame>
+              <ProjetoButtons
+                onClick={handlePreviousPhone}
+              />
+              <ProjetoButtons
+                style={{
+                  flex: 0.4,
+                  marginRight: 80,
+                  marginLeft: 80,
+                }}
+                onClick={() => handleRedirect(projects.phoneProjects[currentPhone].redirect)}
+              />
+              <ProjetoButtons
+                onClick={handleNextPhone}
+              />
+            </ButtonsFrame>
+          </ProjetosContainer> 
+        ) : (
+          <text>No project</text>
+        )
+      }
+      {
+        projects.notebookProjects.length !== 0 ? (
+          <ProjetosContainer>
+            <Notebook active={false} />
+            <ProjetosContainerActive>
+              <ProjectName name={projects.notebookProjects[currentNotebook].name}/>
+              <Notebook src={projects.notebookProjects[currentNotebook].image_url} active={true} />
+            </ProjetosContainerActive>
+            <Notebook active={false} />
+            <ButtonsFrame>
+              <ProjetoButtons
+                onClick={handlePreviousNotebook}
+              />
+              <ProjetoButtons
+                style={{
+                  flex: 1.8,
+                  marginRight: 80,
+                  marginLeft: 80,
+                }}
+                onClick={() => handleRedirect(projects.notebookProjects[currentNotebook].redirect)}
+              />
+              <ProjetoButtons
+                onClick={handleNextNotebook}
+              />
+            </ButtonsFrame>
+          </ProjetosContainer> 
+        ) : (
+          <text>No project</text>
+        )
+      }
+    </Container>
   )
 }
+

@@ -18,6 +18,7 @@ const ProjetosContainer = styled.div`
     margin: 0 80px;
   }
   position: relative;
+  overflow: hidden;
 `;
 
 const ProjetosContainerActive = styled.div`
@@ -32,11 +33,13 @@ const ButtonsFrame = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
-  background: #ff000042;
 `;
 
 const ProjetoButtons = styled.button`
-  
+  flex: 1;
+  background: none;
+  border: none;
+
 `;
 
 
