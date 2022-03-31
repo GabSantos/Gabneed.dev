@@ -1,19 +1,17 @@
-import { ComponentProps, ComponentPropsWithoutRef, useEffect, useState } from 'react';
-import { collection, query, getDocs, where, QueryDocumentSnapshot, DocumentData } from 'firebase/firestore'
+import { useEffect, useState } from 'react';
 
-import { db } from '../../utils/firebase';
 import Notebook from "../Notebook";
 import Phone from "../Phone";
 import ProjectName from "../ProjectName";
 
 import { ButtonsFrame, Container, ProjetoButtons, ProjetosContainer, ProjetosContainerActive } from "./styles";
-import { GetServerSideProps, GetStaticProps } from 'next';
-import { ProjectsProps, ResponseProps } from '../../pages';
+import {  ResponseProps } from '../../pages';
 
 export default function Projetos({ projects }: ResponseProps){
   const [currentPhone, setCurrentPhone] = useState(0);
   const [currentNotebook, setCurrentNotebook] = useState(0);
 
+  // Carousel controls
   const handleNextPhone = () => {
     if(currentPhone + 1 > projects.phoneProjects.length - 1){
       setCurrentPhone(0);
@@ -48,7 +46,6 @@ export default function Projetos({ projects }: ResponseProps){
       newWindow.opener = null;
     }
   }
-
   useEffect(() => {
     const phoneCarousel = setTimeout(() => {
       handleNextPhone();
@@ -58,7 +55,6 @@ export default function Projetos({ projects }: ResponseProps){
       clearTimeout(phoneCarousel);
     };
   }, [currentPhone]);
-
   useEffect(() => {
     const notebookCarousel = setTimeout(() => {
       handleNextNotebook();
@@ -68,6 +64,7 @@ export default function Projetos({ projects }: ResponseProps){
       clearTimeout(notebookCarousel);
     };
   }, [currentNotebook]);
+  // End carousel controls
 
   return (
     <Container>
@@ -118,7 +115,7 @@ export default function Projetos({ projects }: ResponseProps){
               />
               <ProjetoButtons
                 style={{
-                  flex: 1.8,
+                  flex: 1.5,
                   marginRight: 80,
                   marginLeft: 80,
                 }}
@@ -130,7 +127,30 @@ export default function Projetos({ projects }: ResponseProps){
             </ButtonsFrame>
           </ProjetosContainer> 
         ) : (
-          <text>No project</text>
+          <ProjetosContainer>
+            <Notebook active={false} />
+            <ProjetosContainerActive>
+              <ProjectName name={'No project'}/>
+              <Notebook active={true} />
+            </ProjetosContainerActive>
+            <Notebook active={false} />
+            <ButtonsFrame>
+              <ProjetoButtons
+                onClick={handlePreviousNotebook}
+              />
+              <ProjetoButtons
+                style={{
+                  flex: 1.8,
+                  marginRight: 80,
+                  marginLeft: 80,
+                }}
+                onClick={() => {}}
+              />
+              <ProjetoButtons
+                onClick={handleNextNotebook}
+              />
+            </ButtonsFrame>
+          </ProjetosContainer> 
         )
       }
     </Container>

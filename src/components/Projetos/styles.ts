@@ -24,7 +24,9 @@ const ProjetosContainer = styled.div`
 const ProjetosContainerActive = styled.div`
   display: flex;
   flex-direction: column;
-  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: auto;
 `;
 
 const ButtonsFrame = styled.div`
@@ -33,6 +35,7 @@ const ButtonsFrame = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
+  //background: #ff000020;
 `;
 
 const ProjetoButtons = styled.button`

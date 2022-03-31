@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import Image from "next/image"
 type NotebookProps = {
-  active: boolean;
+  active: boolean; 
 }
 
 const Frame = styled.div<NotebookProps>`
