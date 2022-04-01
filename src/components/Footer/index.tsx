@@ -37,6 +37,13 @@ export default function Footer() {
     }
   };
 
+  const handleRedirect = (url: string) => {
+    const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
+    if(newWindow){
+      newWindow.opener = null;
+    }
+  }
+
   useEffect(() => {
     typeWriter(palavras[0], 0, 0);
   }, []);
@@ -53,9 +60,9 @@ export default function Footer() {
         <FooterButtons>
           <FooterText>Entre em contato.</FooterText>
           <Button>Currículo</Button>
-          <Icon icon="github" />
-          <Icon icon="linkedin" />
-          <Icon icon="mail" />
+          <Icon icon="github" onClick={() => handleRedirect('https://github.com/GabSantos/')}/>
+          <Icon icon="linkedin" onClick={() => handleRedirect('https://www.linkedin.com/in/gabriel-ag-santos/')}/>
+          {/* <Icon icon="mail" onClick={() => handleRedirect('https://github.com/GabSantos/')}/> */}
         </FooterButtons>
         <Thanks>May the force be with you</Thanks>
       </FooterContainer>

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Frame = styled.div`
-  background: rgba(0, 0, 0, 0.24);
+  background: rgba(0, 0, 0, 0.48);
   border: 3px solid rgba(0, 0, 0, 0.48);
   backdrop-filter: blur(10px);
   border-radius: 10px;
