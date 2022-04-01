@@ -19,8 +19,8 @@ const TecnologiasContainer = styled.div`
   padding: 30px 0;
   width: 100%;
 
-  background: rgba(255, 255, 255, 0.12);
-  border: 3px solid rgba(255, 255, 255, 0.24);
+  background: rgba(0, 0, 0, 0.48);
+  border: 3px solid rgba(0, 0, 0, 0.48);
   box-sizing: border-box;
   backdrop-filter: blur(5px);
   border-radius: 120px;

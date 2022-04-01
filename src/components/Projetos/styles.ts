@@ -12,7 +12,7 @@ const ProjetosContainer = styled.div`
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  margin-top: 160px;
+  margin-top: 120px;
   width: 100%;
   > div {
     margin: 0 80px;
