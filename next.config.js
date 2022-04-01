@@ -13,7 +13,10 @@ const nextConfig = {
   },
   images: {
     domains: ['firebasestorage.googleapis.com'],
-  }
+  },
+  // experimental: {
+  //   styledComponents: true,
+  // }
 }
 
 module.exports = nextConfig

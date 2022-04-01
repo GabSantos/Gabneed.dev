@@ -43,22 +43,22 @@ export default function Footer() {
 
   return (
     <Container>
-        <FooterContainer>
-          <FooterTitleFrame>
-            <FooterTitle>Need a &nbsp;</FooterTitle>
-            <FooterTitle hasColor >/</FooterTitle>
-            <FooterTitle hasColor >{footerWord}</FooterTitle>
-            <FooterLine >&nbsp;|</FooterLine>
-          </FooterTitleFrame>
-          <FooterButtons>
-            <FooterText>Entre em contato.</FooterText>
-            <Button>Currículo</Button>
-            <Icon icon="github" />
-            <Icon icon="linkedin" />
-            <Icon icon="mail" />
-          </FooterButtons>
-          <Thanks>May the force be with you</Thanks>
-        </FooterContainer>
-      </Container>
+      <FooterContainer>
+        <FooterTitleFrame>
+          <FooterTitle>Need a &nbsp;</FooterTitle>
+          <FooterTitle hasColor >/</FooterTitle>
+          <FooterTitle hasColor >{footerWord}</FooterTitle>
+          <FooterLine >&nbsp;|</FooterLine>
+        </FooterTitleFrame>
+        <FooterButtons>
+          <FooterText>Entre em contato.</FooterText>
+          <Button>Currículo</Button>
+          <Icon icon="github" />
+          <Icon icon="linkedin" />
+          <Icon icon="mail" />
+        </FooterButtons>
+        <Thanks>May the force be with you</Thanks>
+      </FooterContainer>
+    </Container>
   )
 }

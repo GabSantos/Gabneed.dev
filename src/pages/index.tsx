@@ -8,8 +8,9 @@ import Footer from "../components/Footer";
 import { GetStaticProps } from "next";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { db, storage } from "../utils/firebase";
-import { useEffect } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { getDownloadURL, ref } from "firebase/storage";
+import Background from "../components/Background";
 
 export type ProjectsProps = JSX.IntrinsicAttributes &{
   image_url: string;
@@ -26,18 +27,23 @@ export type ResponseProps = {
 }
 
 export default function Home(props: ResponseProps) {
-
-
-  useEffect(() => {
-  }, [])
-
+  const [height, setHeight] = useState(null);
+  const [width, setWidth] = useState(null);
+  const div = useCallback(node => {
+    if (node !== null) {
+      setHeight(node.getBoundingClientRect().height);
+      setWidth(node.getBoundingClientRect().width);
+    }
+  }, []);
 
   return (
-    <>
+    <div ref={div}>
       <Head>
         
       </Head>
 
+      <Background height={height} width={width} />
+      
       <Sobre />
 
       <Projetos projects={props.projects}/>
@@ -45,7 +51,7 @@ export default function Home(props: ResponseProps) {
       <Tecnologias />
 
       <Footer />
-    </>
+    </ div>
   )
 }
  

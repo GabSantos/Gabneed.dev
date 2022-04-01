@@ -8,7 +8,6 @@ type TitleProps = {
 
 const Container = styled.div`
   width: 100%;
-  height: 500px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -26,7 +25,7 @@ const FooterContainer = styled.div`
   background: rgba(0, 0, 0, 0.48);
   border-top: 3px solid rgba(0, 0, 0, 0.48);
   backdrop-filter: blur(5px);
-  padding: 0 60px;
+  padding: 50px 60px 138px 60px;
 `;
 
 const blinkTextCursor = keyframes`

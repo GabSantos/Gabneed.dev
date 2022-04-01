@@ -49,7 +49,7 @@ const FotoContainer = styled.div`
   min-height: 500px;
   border-radius: 50%;
   background: linear-gradient(180deg, #393E46 20%, #00FFF5 150%);
-  border: solid 0px #393E46;
+  border: solid 20px #393E46;
   margin-top: 100px;
 `;
 
@@ -57,8 +57,8 @@ const FotoMask = styled.div`
   position: absolute;
   bottom: 0;
   left: 0;
-  height: 600px;
-  width: 500px;
+  height: 580px;
+  width: 460px;
   border-radius: 250px;
   overflow: hidden;
 

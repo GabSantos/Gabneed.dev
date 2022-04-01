@@ -26,8 +26,8 @@ export default function Sobre() {
               unoptimized
               src={src}
               alt='minha foto'
-              width={500}
-              height={600}
+              width={460}
+              height={580}
               objectFit="cover"
             />
           </FotoMask>
