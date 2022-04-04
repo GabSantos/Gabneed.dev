@@ -1,13 +1,14 @@
+import { ButtonHTMLAttributes } from 'react';
 import { FaFileDownload } from 'react-icons/fa';
 
 
 import { Frame, Text } from "./styles";
 
-type ButtonProps  = {
+type ButtonProps =  {
   children?: React.ReactNode,
 }
  
-export default function Button({ children, ...rest }: ButtonProps) {
+export default function Button({ children, ...rest }: ButtonHTMLAttributes<ButtonProps>) {
   
 
   return (

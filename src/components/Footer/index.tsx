@@ -59,7 +59,9 @@ export default function Footer() {
         </FooterTitleFrame>
         <FooterButtons>
           <FooterText>Entre em contato.</FooterText>
-          <Button>Currículo</Button>
+          <Button
+            onClick={() => handleRedirect('https://firebasestorage.googleapis.com/v0/b/gabneed-dev.appspot.com/o/about%2FGabriel_Santos.pdf?alt=media&token=03bf7674-d20b-4c25-9834-ab222354a6cf')}
+          >Currículo</Button>
           <Icon icon="github" onClick={() => handleRedirect('https://github.com/GabSantos/')}/>
           <Icon icon="linkedin" onClick={() => handleRedirect('https://www.linkedin.com/in/gabriel-ag-santos/')}/>
           {/* <Icon icon="mail" onClick={() => handleRedirect('https://github.com/GabSantos/')}/> */}

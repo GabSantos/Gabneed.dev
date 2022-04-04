@@ -8,7 +8,8 @@ const Container = styled.div`
   flex-direction: row;
   justify-content: center;
   padding: 0 60px;
-  margin-top: 30px;
+  padding-top: 30px;
+  margin: 0;
 `;
 
 const SobreContainer = styled.div`

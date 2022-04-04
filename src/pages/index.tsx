@@ -37,7 +37,7 @@ export default function Home(props: ResponseProps) {
   }, []);
 
   return (
-    <div ref={div}>
+    <div ref={div} >
       <Head>
         
       </Head>
