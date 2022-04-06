@@ -25,6 +25,7 @@ const FooterContainer = styled.div`
   background: rgba(0, 0, 0, 0.48);
   border-top: 3px solid rgba(0, 0, 0, 0.48);
   backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
   padding: 50px 60px 138px 60px;
 `;
 

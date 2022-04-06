@@ -9,8 +9,7 @@ type GenerateBolaProps = {
  
 
 export default function Background({ height, width }) {
-  const random = new Random(MersenneTwister19937.seed(7));
-  const bolaRand = new Random(MersenneTwister19937.seed(2007));
+  const random = new Random(MersenneTwister19937.seed(10));
   const bolas = [];
   const [loading, setLoading] = useState(true);
   const [heightStep, widthStep] = [height / 16, width / 16];
@@ -35,12 +34,11 @@ export default function Background({ height, width }) {
       }
     }
   }
-
   return (
     <Container height={height}>
       { 
         bolas.map((bola, i) => (
-          <Bola key={i} size={random.integer(40, 150)} top={bola.top} left={bola.left} />
+          <Bola key={i} size={random.integer(30, 250)} top={bola.top} left={bola.left} />
         ))
       }
     </Container>
