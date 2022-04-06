@@ -24,8 +24,8 @@ const Bola = styled.div<BolaProps>`
   width: ${ props => props.size }px;
   height: ${ props => props.size }px;
   border-radius: 50%;
-  left: ${ props => props.left }px;
-  top: ${ props => props.top }px;
+  left: ${ props => props.left - (props.size / 2) }px;
+  top: ${ props => props.top - (props.size / 2) }px;
 `;
 
 const animation = keyframes`

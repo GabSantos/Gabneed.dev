@@ -1,27 +1,38 @@
 import { useEffect, useRef, useState } from "react";
 import { Container, Bola } from "./styles";
+import { MersenneTwister19937, Random } from 'random-js'
 
 type GenerateBolaProps = {
   height: number;
   width: number;
 }
-
+ 
 
 export default function Background({ height, width }) {
+  const random = new Random(MersenneTwister19937.seed(7));
+  const bolaRand = new Random(MersenneTwister19937.seed(2007));
   const bolas = [];
   const [loading, setLoading] = useState(true);
-  const RandomSize = (max: number, min: number) => {
-    return Math.floor(Math.random() * max) + min;
+  const [heightStep, widthStep] = [height / 16, width / 16];
+  const [heightTotal, widthTotal] = [height + heightStep, width + widthStep];
+  const generateBolas = (top: number, left: number) => {
+    return { top, left }
   }
 
-  const generateBolas = () => {
-    const [top, left] = [ RandomSize(height + 100, -100), RandomSize(width + 100, -100)]
-    return { size: RandomSize(450, 48), top, left }
-  }
 
   if(typeof window !== "undefined") {
-    for(let i = 0; i < RandomSize(100, 40); i++) {
-      bolas.push(generateBolas())
+    for(let i = 0; i < heightTotal ; i+= heightStep) {
+      for(let j = 0; j < widthTotal ; j+= widthStep){
+        if(random.integer(0, 99) < 25) {
+          const minPosI = i;
+          const maxPosI = i + heightStep;
+          const minPosJ = j;
+          const maxPosJ = j + widthStep;
+          const topPos = random.integer(minPosI, maxPosI);
+          const leftPos = random.integer(minPosJ, maxPosJ);
+          bolas.push(generateBolas(topPos, leftPos))
+        }
+      }
     }
   }
 
@@ -29,7 +40,7 @@ export default function Background({ height, width }) {
     <Container height={height}>
       { 
         bolas.map((bola, i) => (
-          <Bola key={i} size={bola.size} top={bola.top} left={bola.left} />
+          <Bola key={i} size={random.integer(40, 150)} top={bola.top} left={bola.left} />
         ))
       }
     </Container>

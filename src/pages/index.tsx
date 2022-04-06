@@ -37,48 +37,48 @@ export default function Home(props: ResponseProps) {
   }, []);
 
   return (
-    <div ref={div} >
+    <div ref={div} style={{height: '100vh', width:'100%'}}>
       <Head>
         
       </Head>
 
       <Background height={height} width={width} />
       
-      <Sobre />
+      {/* <Sobre />
 
       <Projetos projects={props.projects}/>
 
       <Tecnologias />
 
-      <Footer />
+      <Footer /> */}
     </ div>
   )
 }
  
-export const getStaticProps: GetStaticProps = async () => {
+// export const getStaticProps: GetStaticProps = async () => {
   
-  const phoneQuery = query(collection(db, 'projetos'),where('platform','==','Phone'));
-  const phoneSnapshot = await getDocs(phoneQuery);
-  const phoneProjects: ProjectsProps[] = [];
-  phoneSnapshot.forEach((snapshot) => {
-    phoneProjects.push(snapshot.data() as ProjectsProps);
-  });
+//   const phoneQuery = query(collection(db, 'projetos'),where('platform','==','Phone'));
+//   const phoneSnapshot = await getDocs(phoneQuery);
+//   const phoneProjects: ProjectsProps[] = [];
+//   phoneSnapshot.forEach((snapshot) => {
+//     phoneProjects.push(snapshot.data() as ProjectsProps);
+//   });
 
-  const notebookQuery = query(collection(db, 'projetos'),where('platform','==','Notebook'));
-  const notebookSnapshot = await getDocs(notebookQuery);
-  const notebookProjects: ProjectsProps[] = [];
-  notebookSnapshot.forEach((snapshot) => {
-    notebookProjects.push(snapshot.data() as ProjectsProps);
-  });
+//   const notebookQuery = query(collection(db, 'projetos'),where('platform','==','Notebook'));
+//   const notebookSnapshot = await getDocs(notebookQuery);
+//   const notebookProjects: ProjectsProps[] = [];
+//   notebookSnapshot.forEach((snapshot) => {
+//     notebookProjects.push(snapshot.data() as ProjectsProps);
+//   });
 
-  const response: ResponseProps = {
-      projects: {
-        phoneProjects,
-        notebookProjects,
-      }
-  }
+//   const response: ResponseProps = {
+//       projects: {
+//         phoneProjects,
+//         notebookProjects,
+//       }
+//   }
   
-  return {
-    props: response
-  }
-}
+//   return {
+//     props: response
+//   }
+// }
