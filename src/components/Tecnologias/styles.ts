@@ -19,11 +19,11 @@ const TecnologiasContainer = styled.div`
   padding: 30px 0;
   width: 100%;
 
-  background: rgba(0, 0, 0, 0.48);
-  border: 3px solid rgba(0, 0, 0, 0.48);
+  //background: rgba(0, 0, 0, 0.48);
+  //border: 3px solid rgba(0, 0, 0, 0.48);
   box-sizing: border-box;
-  backdrop-filter: blur(5px);
-  border-radius: 120px;
+  //backdrop-filter: blur(5px);
+  //border-radius: 120px;
 
 `;
 

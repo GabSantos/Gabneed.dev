@@ -16,14 +16,14 @@ export default function Tecnologias() {
     <Container>
         <TecnologiasText>Tecnologias que utilizo</TecnologiasText>
         <TecnologiasContainer>
-          <abbr title='Javascript'><Tech src={Js} alt="Js logo" height={96} width={96} objectFit="contain"/></abbr>
-          <abbr title='Typescript'><Tech src={Ts} alt="Ts logo" height={96}  width={96} objectFit="contain"/></abbr>
-          <abbr title='React JS'><Tech src={ReactJs} alt="React logo" height={96} width={85} objectFit="contain"/></abbr>
-          <abbr title='NodeJS'><Tech src={Node} alt="Node logo" height={96} width={85} objectFit="contain"/></abbr>
-          <abbr title='Github'><Tech src={Github} alt="Github logo" height={96} width={96} objectFit="contain"/></abbr>
-          <abbr title='Firebase'><Tech src={Firebase} alt="Firebase logo" height={96} width={70} objectFit="contain"/></abbr>
-          <abbr title='MySQL'><Tech src={Mysql} alt="Mysql logo" height={96} width={184} objectFit="contain"/></abbr>
-          <abbr title='Docker'><Tech src={Docker} alt="Docker logo" height={96} width={133} objectFit="contain"/></abbr>
+          <abbr title='Javascript'><Tech src={Js} alt="Js logo" objectFit="contain"/></abbr>
+          <abbr title='Typescript'><Tech src={Ts} alt="Ts logo" objectFit="contain"/></abbr>
+          <abbr title='React'><Tech src={ReactJs} alt="React logo" objectFit="contain"/></abbr>
+          <abbr title='NodeJS'><Tech src={Node} alt="Node logo" objectFit="contain"/></abbr>
+          <abbr title='Github'><Tech src={Github} alt="Github logo" objectFit="contain"/></abbr>
+          <abbr title='Firebase'><Tech src={Firebase} alt="Firebase logo"  objectFit="contain"/></abbr>
+          <abbr title='MySQL'><Tech src={Mysql} alt="Mysql logo" objectFit="contain"/></abbr>
+          <abbr title='Docker'><Tech src={Docker} alt="Docker logo" objectFit="contain"/></abbr>
         </TecnologiasContainer>
       </Container>
   )

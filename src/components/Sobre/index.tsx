@@ -9,29 +9,29 @@ export default function Sobre() {
   
   return (
     <Container>
-        <SobreContainer>
-          <Titulo>Need a dev?</Titulo>
-          <SobreDescription>
-            <SobreText>
-              Opa, tudo certo? Sou o Gabriel Santos, 
-              um desenvolvedor de software apaixonado 
-              por uma galáxia muito muito distante...
-            </SobreText>
-          </SobreDescription>
-        </SobreContainer>
-        <FotoContainer>
-          <FotoMask>
-            <Foto
-              loader={() => src}
-              unoptimized
-              src={src}
-              alt='minha foto'
-              width={460}
-              height={580}
-              objectFit="cover"
-            />
-          </FotoMask>
-        </FotoContainer>
-      </Container>
+      <SobreContainer>
+        <Titulo>Need a dev?</Titulo>
+        <SobreDescription>
+          <SobreText>
+            Lorem Ipsum is simply dummy text of the printing and 
+            typesetting industry. Lorem Ipsum has been the industrys 
+            standard dummy text 
+          </SobreText>
+        </SobreDescription>
+      </SobreContainer>
+      <FotoContainer>
+        <FotoMask>
+          <Foto
+            loader={() => src}
+            unoptimized
+            src={src}
+            alt='minha foto'
+            width={420}
+            height={560}
+            objectFit="cover"
+          />
+        </FotoMask>
+      </FotoContainer>
+    </Container>
   )
 }

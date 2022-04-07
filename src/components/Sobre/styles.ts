@@ -6,18 +6,25 @@ const Container = styled.div`
   height: auto;
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  padding: 0 60px;
-  padding-top: 30px;
-  margin: 0;
+  justify-content: space-between;
+  padding-top: 60px;
+  
+  @media(max-width: 1920px) {
+    padding: 0 140px;
+  }
+  @media(max-width: 1440px){
+    padding: 0 60px;
+  }
+  padding: 0 200px;
+
 `;
 
 const SobreContainer = styled.div`
-  width: 660px;
-  height: 500px;
+  width: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   margin-right: 200px;
   margin-top: 100px;
 `;
@@ -28,17 +35,18 @@ const SobreDescription = styled.div`
   border-radius: 15px;
   padding: 24px;
   backdrop-filter: blur(5px);
-  height: 100%;
+  height: 300px;
+  overflow: scroll;
 `;
 
 const SobreText = styled.text`
   font-size: 24px;
   color: #EBECED;
   font-family: 'Poppins', sans-serif;
-
 `;
 
 const Titulo = styled.text`
+  min-width: 400px;
   margin-top: 10px;
   font-size: 64px;
   font-family: 'Poppins', sans-serif;
@@ -96,8 +104,10 @@ const Titulo = styled.text`
 
 const FotoContainer = styled.div`
   position: relative;
-  min-width: 500px;
-  min-height: 500px;
+  min-width: 460px;
+  min-height: 460px;
+  max-width: 460px;
+  max-height: 460px;
   border-radius: 50%;
   background: linear-gradient(180deg, #393E46 20%, #00FFF5 150%);
   border: solid 20px #393E46;
@@ -108,9 +118,9 @@ const FotoMask = styled.div`
   position: absolute;
   bottom: 0;
   left: 0;
-  height: 580px;
-  width: 460px;
-  border-radius: 250px;
+  height: 540px;
+  width: 420px;
+  border-radius: 240px;
   overflow: hidden;
 
 `;

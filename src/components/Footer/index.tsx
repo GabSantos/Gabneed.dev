@@ -66,7 +66,7 @@ export default function Footer() {
           <Icon icon="linkedin" onClick={() => handleRedirect('https://www.linkedin.com/in/gabriel-ag-santos/')}/>
           {/* <Icon icon="mail" onClick={() => handleRedirect('https://github.com/GabSantos/')}/> */}
         </FooterButtons>
-        <Thanks>May the force be with you</Thanks>
+        {/* <Thanks>May the force be with you</Thanks> */}
       </FooterContainer>
     </Container>
   )
