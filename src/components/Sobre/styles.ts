@@ -8,6 +8,7 @@ const Container = styled.div`
   flex-direction: row;
   justify-content: space-between;
   padding-top: 60px;
+  padding: 0 200px;
   
   @media(max-width: 1920px) {
     padding: 0 140px;
@@ -15,7 +16,10 @@ const Container = styled.div`
   @media(max-width: 1440px){
     padding: 0 60px;
   }
-  padding: 0 200px;
+  @media(max-width: 1024px) {
+    flex-direction: column;
+    align-items: center;
+  }
 
 `;
 
@@ -27,6 +31,14 @@ const SobreContainer = styled.div`
   justify-content: space-between;
   margin-right: 200px;
   margin-top: 100px;
+  max-width: 600px;
+  @media(max-width: 1280px) {
+    margin-right: 50px;
+  }
+  @media(max-width: 1024px) {
+    margin-right: 0px;
+    max-width: none;
+  }
 `;
 
 const SobreDescription = styled.div`
@@ -37,6 +49,14 @@ const SobreDescription = styled.div`
   backdrop-filter: blur(5px);
   height: 300px;
   overflow: scroll;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  @media(max-width: 1024px) {
+    height: auto;
+  }
 `;
 
 const SobreText = styled.text`
@@ -46,7 +66,7 @@ const SobreText = styled.text`
 `;
 
 const Titulo = styled.text`
-  min-width: 400px;
+  //min-width: 400px;
   margin-top: 10px;
   font-size: 64px;
   font-family: 'Poppins', sans-serif;
@@ -99,7 +119,11 @@ const Titulo = styled.text`
     0.2px -10.0px 0.02px #393E46, 
     -9.7px -2.3px 0.02px #393E46, 
     -4.3px 9.0px 0.02px #393E46, 
-    7.9px 6.1px 0.02px #393E46
+    7.9px 6.1px 0.02px #393E46;
+  @media(max-width: 1024px) {
+    min-width: none;
+    
+  }
 `;
 
 const FotoContainer = styled.div`
@@ -112,6 +136,12 @@ const FotoContainer = styled.div`
   background: linear-gradient(180deg, #393E46 20%, #00FFF5 150%);
   border: solid 20px #393E46;
   margin-top: 100px;
+  @media(max-width: 1024px) {
+    margin-top: 100px;
+  }
+  @media(max-width: 500px) {
+    transform: scale(0.7);
+  }
 `;
 
 const FotoMask = styled.div`

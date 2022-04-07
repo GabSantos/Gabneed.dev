@@ -42,7 +42,7 @@ export default function Home(props: ResponseProps) {
         
       </Head>
 
-      <Background height={height} width={width} />
+      <Background height={height} width={1920} />
       
       <Sobre />
 
