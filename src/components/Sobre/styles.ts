@@ -6,7 +6,7 @@ const Container = styled.div`
   height: auto;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   padding-top: 60px;
   padding: 0 200px;
   

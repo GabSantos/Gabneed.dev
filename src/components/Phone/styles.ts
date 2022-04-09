@@ -5,7 +5,7 @@ type PhoneProps = {
   active: boolean;
 }
 
-const Frame = styled.div<PhoneProps>`
+const Frame = styled.button<PhoneProps>`
   background: #00ADB5;
   box-shadow: inset 0px 0px 20px #0E3E62;
   height: 245px;
@@ -13,6 +13,7 @@ const Frame = styled.div<PhoneProps>`
   align-items: center;
   justify-content: center;
   display: flex;
+  border: none;
   ${({ active }) => active && `
     height: 350px;
     width: 180px;

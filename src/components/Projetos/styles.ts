@@ -12,7 +12,6 @@ const ProjetosContainer = styled.div`
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  margin-top: 120px;
   width: 100%;
   > div {
     margin: 0 80px;
@@ -21,12 +20,14 @@ const ProjetosContainer = styled.div`
   overflow: hidden;
 `;
 
-const ProjetosContainerActive = styled.div`
+const ProjetosContainerActive = styled.button`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: auto;
+  background: none;
+  border: none;
 `;
 
 const ButtonsFrame = styled.div`

@@ -9,7 +9,6 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 100px;
-  padding: 0 60px;
 `;
 
 const TecnologiasContainer = styled.div`
@@ -17,13 +16,22 @@ const TecnologiasContainer = styled.div`
   justify-content: space-evenly;
   align-items: center;
   padding: 30px 0;
-  width: 100%;
-
-  //background: rgba(0, 0, 0, 0.48);
-  //border: 3px solid rgba(0, 0, 0, 0.48);
-  box-sizing: border-box;
-  //backdrop-filter: blur(5px);
-  //border-radius: 120px;
+  width: 1700px;
+  overflow-x: auto;
+  @media(max-width: 1920px) {
+      width: 1400px;
+    }
+    @media(max-width: 1440px){
+      width: 1000px;
+    }
+    @media(max-width: 1024px) {
+      width: 800px;
+    }
+  > abbr {
+    margin: 0 30px;
+    min-height: 100px;
+    min-width: 100px;
+  }
 
 `;
 
@@ -34,11 +42,12 @@ const TecnologiasText = styled.text`
 `;
 
 const Tech = styled(Image)`
+  min-height: 100px;
+  min-width: 100px;
 `;
-
 export { 
   Container,
   TecnologiasContainer,
   TecnologiasText,
-  Tech
+  Tech,
 }

@@ -10,6 +10,9 @@
   },
   "dependencies": {
     "@types/styled-components": "^5.1.24",
+    "embla-carousel": "^6.2.0",
+    "embla-carousel-autoplay": "^6.2.0",
+    "embla-carousel-react": "^6.2.0",
     "firebase": "^9.6.10",
     "next": "12.1.0",
     "next-fonts": "^1.5.1",

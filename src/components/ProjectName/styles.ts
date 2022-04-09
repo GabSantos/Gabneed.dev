@@ -6,8 +6,9 @@ const Frame = styled.div`
   backdrop-filter: blur(10px);
   border-radius: 10px;
   padding: 5px 30px;
-  width: auto;
   margin-bottom: 30px;
+  margin-top: 120px;
+  max-width: fit-content;
 `;
 
 const Name = styled.text`
